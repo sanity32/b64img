@@ -14,9 +14,13 @@ import (
 
 type Image string
 
-func (b Image) Hash() string {
+func (b Image) Hash() Hash {
 	b.Clean()
-	return fmt.Sprintf("%x", md5.Sum([]byte(b)))
+	return Hash(fmt.Sprintf("%x", md5.Sum([]byte(b))))
+}
+
+func (b Image) Match(h Hash) bool {
+	return b.Hash() == h
 }
 
 func (b Image) String() string {
