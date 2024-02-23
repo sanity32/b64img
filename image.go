@@ -1,4 +1,4 @@
-package model
+package b64img
 
 import (
 	"bytes"

@@ -1,4 +1,4 @@
-package model
+package b64img
 
 const (
 	PREFIX_B64_PNG = "data:image/png;base64,"
