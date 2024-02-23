@@ -1,1 +1,1 @@
-"# b64img" 
+# Smart Base64 Image
