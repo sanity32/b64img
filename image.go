@@ -96,3 +96,10 @@ func (b Image) SaveJpeg(filename string, q ...int) error {
 
 	return jpeg.Encode(f, img, opts)
 }
+
+func (p Image) WithJpgPrefix() Image {
+	if p.hasPrefix(PREFIX_B64_JPG) {
+		return p
+	}
+	return PREFIX_B64_JPG + p
+}

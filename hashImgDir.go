@@ -15,6 +15,10 @@ func (hd HashDir) Exist() bool {
 	return err == nil && stat.IsDir()
 }
 
+func (hd HashDir) Create() error {
+	return os.MkdirAll(string(hd), 0644)
+}
+
 func (hd HashDir) Read(h Hash) (im Image, err error) {
 	if !hd.Exist() {
 		return im, ErrDirHasNoHashImg
